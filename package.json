@@ -1,0 +1,38 @@
+{
+  "name": "coderhouse_desafio9",
+  "version": "1.0.0",
+  "description": "Mocks y Normalizacion",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node ./src/server.js",
+    "devStart": "nodemon ./src/server.js"
+  },
+  "engines": {
+    "node": "16.x"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Dpoggio/Coderhouse_Desafio9.git"
+  },
+  "author": "Demian Poggio",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Dpoggio/Coderhouse_Desafio9/issues"
+  },
+  "homepage": "https://github.com/Dpoggio/Coderhouse_Desafio9#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-handlebars": "^5.3.4",
+    "faker": "^5.5.3",
+    "knex": "^0.95.12",
+    "mongoose": "^6.0.13",
+    "mysql": "^2.18.1",
+    "normalizr": "^3.6.1",
+    "socket.io": "^4.3.1",
+    "sqlite3": "^5.0.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.14"
+  }
+}
