@@ -3,6 +3,7 @@ const express = require('express')
 const { Server: HttpServer } = require('http')
 const { Server: IOServer } = require('socket.io')
 const handlebars = require('express-handlebars')
+const session = require('express-session')
 const { normalize, schema } = require("normalizr");
 
 
@@ -74,10 +75,36 @@ app.set('views', __dirname + '/views')
 app.use(express.json())
 app.use('/', express.static(__dirname + '/public'))
 app.use(express.urlencoded({extended: true}))
+app.use(session({
+    secret: 'CoderHouse!!!',
+    resave: true,
+    saveUninitialized: true
+}))
 
 // Routers
 app.get('/', (req, res) => {
-    res.render('main')
+    if(req.session.nombre){
+        res.render('main', { nombre: req.session.nombre })
+    } else {
+        res.redirect('/login')
+    }
+})
+
+app.get('/login', (req, res) => {
+    res.render('login')
+})
+
+app.post('/login', (req, res) => {
+    const nombre = req.body.nombre
+    req.session.nombre = nombre
+    res.redirect('/')
+})
+
+app.get('/logout', (req, res) => {
+    const nombre = req.session.nombre
+    req.session.destroy(err => {
+        res.render('logout', { nombre })
+    })
 })
 
 app.get('/productos-test', (req, res) => {
