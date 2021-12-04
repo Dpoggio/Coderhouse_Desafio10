@@ -5,6 +5,8 @@ const { Server: IOServer } = require('socket.io')
 const handlebars = require('express-handlebars')
 const session = require('express-session')
 const { normalize, schema } = require("normalizr");
+const MongoStore = require('connect-mongo')
+const conn = require('./lib/connections.js')
 
 
 /**** CONSTANTES ****/
@@ -76,9 +78,14 @@ app.use(express.json())
 app.use('/', express.static(__dirname + '/public'))
 app.use(express.urlencoded({extended: true}))
 app.use(session({
+    store: MongoStore.create({mongoUrl: conn.mongoSessionUrl}),
     secret: 'CoderHouse!!!',
     resave: true,
-    saveUninitialized: true
+    rolling: true,
+    saveUninitialized: true,
+    cookie: {
+        maxAge: 10*60*1000
+    }
 }))
 
 // Routers

@@ -15,3 +15,4 @@ exports.sqlite = {
 }
 
 exports.mongoDbURL = "mongodb://localhost:27017/ecommerce"
+exports.mongoSessionUrl = "mongodb://localhost:27017/sessions"
