@@ -1,5 +1,5 @@
 {
-  "name": "coderhouse_desafio9",
+  "name": "coderhouse_desafio10",
   "version": "1.0.0",
   "description": "Mocks y Normalizacion",
   "main": "server.js",
@@ -13,14 +13,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Dpoggio/Coderhouse_Desafio9.git"
+    "url": "git+https://github.com/Dpoggio/Coderhouse_Desafio10.git"
   },
   "author": "Demian Poggio",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Dpoggio/Coderhouse_Desafio9/issues"
+    "url": "https://github.com/Dpoggio/Coderhouse_Desafio10/issues"
   },
-  "homepage": "https://github.com/Dpoggio/Coderhouse_Desafio9#readme",
+  "homepage": "https://github.com/Dpoggio/Coderhouse_Desafio10#readme",
   "dependencies": {
     "connect-mongo": "^4.6.0",
     "express": "^4.17.1",
